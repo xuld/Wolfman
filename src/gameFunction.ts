@@ -15,7 +15,7 @@ class DistributionRoles {
 
     roles: Roles;
 
-    alive: number;/*生命，1代表活着，0代表死去*/
+    //alive: number;/*生命，1代表活着，0代表死去*/
 
 }
 
@@ -23,15 +23,11 @@ class WolfMan extends DistributionRoles {
 
     roles = Roles.wolfman;
 
-    alive = 1;
-
 }
 
 class Villagers extends DistributionRoles {
 
     roles = Roles.villagers;
-
-    alive = 1;
 
 }
 
@@ -39,15 +35,11 @@ class Hunter extends DistributionRoles {
 
     roles = Roles.hunter;
 
-    alive = 1;
-
 }
 
 class Witch extends DistributionRoles {
 
     roles = Roles.witch;
-
-    alive = 1;
 
     poison = 1;
 
