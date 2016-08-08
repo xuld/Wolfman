@@ -15,7 +15,7 @@ class DistributionRoles {
 
     roles: Roles;
 
-    //alive: number;/*生命，1代表活着，0代表死去*/
+    alive: number;/*生命，1代表活着，0代表死去*/
 
 }
 
@@ -23,11 +23,15 @@ class WolfMan extends DistributionRoles {
 
     roles = Roles.wolfman;
 
+    alive = 1;
+
 }
 
 class Villagers extends DistributionRoles {
 
     roles = Roles.villagers;
+
+    alive = 1;
 
 }
 
@@ -35,11 +39,15 @@ class Hunter extends DistributionRoles {
 
     roles = Roles.hunter;
 
+    alive = 1;
+
 }
 
 class Witch extends DistributionRoles {
 
     roles = Roles.witch;
+
+    alive = 1;
 
     poison = 1;
 
@@ -98,23 +106,23 @@ class Night {
         }
     }
 
-    wolfManKill(index:number) {
+    wolfManKill(index: number) {
         document.write("请指定杀人目标!");
         this.kill(index);
     }
 
-    witch(item: Witch,index:number) {
+    witch(item: Witch) {
         if (item.alive == 1) {
             document.write("是否使用解药?");
             if (true && item.poison == 1) {
                 /*救一个被杀的人*/
-                this.save(index);
+                this.save(parseInt(prompt()));
                 item.poison = 0;
             }
             document.write("是否使用毒药？");
             if (true && item.antidote == 1) {
                 /*杀死一个人*/
-                this.kill(index);
+                this.kill(parseInt(prompt()));
                 item.antidote = 0;
             }
         }
@@ -127,12 +135,12 @@ class Day {
 
     m = new Night();
 
-    show(item: DistributionRoles, index: number) {
+    show(item: DistributionRoles) {
         document.write("昨晚被杀的是" + this.m.dead[this.m.dead.length]);
         if (item.roles === Roles.hunter) {
             document.write("请选择要射杀的目标。");
             /*猎人选择目标*/
-            this.m.kill(index);
+            this.m.kill(parseInt(prompt()));
             this.lastWords;
         }
         else {
@@ -143,7 +151,7 @@ class Day {
     /*遗言*/
     lastWords() {
         document.write("请发表遗言");
-        document.write();
+        document.write(prompt());
     }
 
     /*玩家发言*/
@@ -235,3 +243,29 @@ class Day {
     }
 
 }
+
+let a = new Witch;
+let b = new Hunter;
+let c = new Villagers;
+let d = new Villagers;
+let e = new WolfMan;
+let f = new WolfMan;
+let x = new Night;
+let y = new Day;
+x.add(a);
+x.add(b);
+x.add(c);
+x.add(d);
+x.add(e);
+x.add(f);
+x.addVillagers;
+x.addWolfMan;
+//let m = prompt();
+//let n = parseInt(m);
+x.wolfManKill(parseInt(prompt()));
+x.witch(a);
+y.show;
+y.speak;
+y.vote;
+y.rule;
+
