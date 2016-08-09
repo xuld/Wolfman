@@ -1,0 +1,34 @@
+﻿body {
+    margin:0px;
+    background-color:cadetblue;
+}
+
+#frame {
+    width:100%;
+    height:950px;
+    background-color:#808080;
+}
+
+#main {
+    width:100%;
+    height:70%;
+    background-color:aquamarine;
+}
+
+#SpeakText {
+    width:60%;
+    height:30%;
+    background-color:cadetblue
+}
+
+#stxt {
+    width:99%;
+    height:92%;
+    background-color:antiquewhite;
+    margin:0px;
+}
+
+#intxt {
+    width:94%;
+    height:7%;
+}
