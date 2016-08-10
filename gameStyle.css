@@ -32,3 +32,12 @@
     width:94%;
     height:7%;
 }
+
+#site0,#site1,#site2,#site3,#site4,#site5 {
+    width:15%;
+    height:45%;
+    margin:10px 160px;
+    border:1px solid #808080;
+    float:left;
+    background-color:Highlight;
+}
