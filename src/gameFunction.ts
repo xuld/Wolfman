@@ -244,28 +244,4 @@ class Day {
 
 }
 
-let a = new Witch;
-let b = new Hunter;
-let c = new Villagers;
-let d = new Villagers;
-let e = new WolfMan;
-let f = new WolfMan;
-let x = new Night;
-let y = new Day;
-x.add(a);
-x.add(b);
-x.add(c);
-x.add(d);
-x.add(e);
-x.add(f);
-x.addVillagers;
-x.addWolfMan;
-//let m = prompt();
-//let n = parseInt(m);
-x.wolfManKill(parseInt(prompt()));
-x.witch(a);
-y.show;
-y.speak;
-y.vote;
-y.rule;
 

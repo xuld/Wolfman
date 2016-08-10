@@ -4,9 +4,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 	<meta charset="utf-8" />
-    <script type="text/javascript" src="lib/MyScript.js"></script>
+    <script type="text/javascript">
+        function showValue(){
+            var Ohref = window.location.href;
+            var arrhref = Ohref.split("?user=");
+            var arrhref1 = arrhref[1].split("&");
+            return arrhref1[0];
+        }
+
+    </script>
 </head>
 <body>
+    
+    <p>
+        <strong id="u">
+            <script>
+                u.innerText = showValue();
+            </script>
+        </strong>
+        &nbsp;你好！
+    </p>
 
+    <ul>
+        <li><a href="#">创建房间</a></li>
+        <li><a href="#">加入房间</a></li>
+    </ul>
 </body>
 </html>
