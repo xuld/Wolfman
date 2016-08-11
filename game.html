@@ -11,6 +11,104 @@
     <meta charset="utf-8" />
    
     <link rel="stylesheet" type="text/css" href="gameStyle.css" />
+    <script type="text/javascript">
+
+        function getValue() {
+            var url = document.location.search;
+            var arr = url.split("=");
+            return arr[1];
+        }
+
+        function join0() {
+            if (document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
+                var ui = document.getElementById("attend0");
+                ui.style.display = "none";
+                var site = document.getElementById("site0");
+                var content = document.createTextNode(getValue());
+                site.appendChild(content);
+            }
+            else {
+                alert("你已加入游戏！");
+            }
+        }
+        
+
+        function join1() {
+            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
+                var ui = document.getElementById("attend1");
+                ui.style.display = "none";
+                var site = document.getElementById("site1");
+                var content = document.createTextNode(getValue());
+                site.appendChild(content);
+            }
+            else {
+                alert("你已加入游戏！");
+            }
+        }
+
+        function join2() {
+            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
+                var ui = document.getElementById("attend2");
+                ui.style.display = "none";
+                var site = document.getElementById("site2");
+                var content = document.createTextNode(getValue());
+                site.appendChild(content);
+            }
+            else {
+                alert("你已加入游戏！");
+            }
+        }   
+
+        function join3() {
+            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
+                var ui = document.getElementById("attend3");
+                ui.style.display = "none";
+                var site = document.getElementById("site3");
+                var content = document.createTextNode(getValue());
+                site.appendChild(content);
+            }
+            else {
+                alert("你已加入游戏！");
+            }
+        }
+
+        function join4() {
+            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
+                var ui = document.getElementById("attend4");
+                ui.style.display = "none";
+                var site = document.getElementById("site4");
+                var content = document.createTextNode(getValue());
+                site.appendChild(content);
+            }
+            else {
+                alert("你已加入游戏！");
+            }
+        }
+
+        function join5() {
+            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue()) {
+                var ui = document.getElementById("attend5");
+                ui.style.display = "none";
+                var site = document.getElementById("site5");
+                var content = document.createTextNode(getValue());
+                site.appendChild(content);
+            }
+            else {
+                alert("你已加入游戏！");
+            }
+        }
+
+        function gameStart() {
+            if (document.getElementById("site0").innerText != "" && document.getElementById("site1").innerText != "" && document.getElementById("site2").innerText != "" && document.getElementById("site3").innerText != "" && document.getElementById("site4").innerText != "" && document.getElementById("site5").innerText != "") {
+
+            }
+            else {
+                alert("等待其他玩家")
+            }
+        }
+        
+
+    </script>
    
 </head>
 
@@ -21,22 +119,22 @@
            
             <td colspan="3" id="main">
                 <div id="site0">
-
+                    <input id="attend0" type="button" value="参加" onclick="join0()"/>
                 </div>
                 <div id="site1">
-
+                    <input id="attend1" type="button" value="参加" onclick="join1()"/>
                 </div>
                 <div id="site2">
-
+                    <input id="attend2" type="button" value="参加" onclick="join2()"/>
                 </div>
                 <div id="site3">
-
+                    <input id="attend3" type="button" value="参加" onclick="join3()"/>
                 </div>
                 <div id="site4">
-
+                    <input id="attend4" type="button" value="参加" onclick="join4()"/>
                 </div>
                 <div id="site5">
-
+                    <input id="attend5" type="button" value="参加" onclick="join5()"/>
                 </div>
             </td>
            
@@ -53,7 +151,10 @@
                
             </td>
            
-            <td></td>
+            <td id="menu">
+                <input id="start" type="button" value="开始游戏" onclick="gameStart()"/><br />
+                <input id="leave" type="button" value="离开房间" onclick="window.history.back(-1)"/>
+            </td>
            
         </tr>
        

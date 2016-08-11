@@ -1,4 +1,4 @@
-﻿enum Roles {
+﻿enum Role {
 
     wolfman,
 
@@ -10,18 +10,18 @@
 
 }
 
-/*分配角色*/
+/**分配角色*/
 class DistributionRoles {
 
-    roles: Roles;
+    roles: Role;
 
-    alive: number;/*生命，1代表活着，0代表死去*/
+    alive: number;//生命，1代表活着，0代表死去
 
 }
 
 class WolfMan extends DistributionRoles {
 
-    roles = Roles.wolfman;
+    roles = Role.wolfman;
 
     alive = 1;
 
@@ -29,7 +29,7 @@ class WolfMan extends DistributionRoles {
 
 class Villagers extends DistributionRoles {
 
-    roles = Roles.villagers;
+    roles = Role.villagers;
 
     alive = 1;
 
@@ -37,7 +37,7 @@ class Villagers extends DistributionRoles {
 
 class Hunter extends DistributionRoles {
 
-    roles = Roles.hunter;
+    roles = Role.hunter;
 
     alive = 1;
 
@@ -45,7 +45,7 @@ class Hunter extends DistributionRoles {
 
 class Witch extends DistributionRoles {
 
-    roles = Roles.witch;
+    roles = Role.witch;
 
     alive = 1;
 
@@ -89,7 +89,7 @@ class Night {
     /*将狼人分为一组*/
     addWolfMan() {
         for (let i = 0; i < this.player.length; i++) {
-            if (this.player[i].roles === Roles.wolfman) {
+            if (this.player[i].roles === Role.wolfman) {
                 this.wolfmans.push(this.player[i]);
             }
         }
@@ -100,7 +100,7 @@ class Night {
     /*将村民分为一组*/
     addVillagers() {
         for (let i = 0; i < this.player.length; i++) {
-            if (this.player[i].roles === (Roles.villagers ||  Roles.hunter ||  Roles.witch)) {
+            if (this.player[i].roles === (Role.villagers ||  Role.hunter ||  Role.witch)) {
                 this.villagers.push(this.player[i]);
             }
         }
@@ -137,7 +137,7 @@ class Day {
 
     show(item: DistributionRoles) {
         document.write("昨晚被杀的是" + this.m.dead[this.m.dead.length]);
-        if (item.roles === Roles.hunter) {
+        if (item.roles === Role.hunter) {
             document.write("请选择要射杀的目标。");
             /*猎人选择目标*/
             this.m.kill(parseInt(prompt()));

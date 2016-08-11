@@ -12,22 +12,27 @@
             return arrhref1[0];
         }
 
+        function to() {
+            var geturl = showValue();
+            document.location.href("game.html?user=" + geturl);
+        }
     </script>
 </head>
 <body>
-    
-    <p>
-        <strong id="u">
-            <script>
-                u.innerText = showValue();
-            </script>
-        </strong>
-        &nbsp;你好！
-    </p>
+    <form>
+        <p>
+            <strong id="user">
+                <script>
+                    user.innerText = showValue();
+                </script>
+            </strong>
+            &nbsp;你好！
+        </p>
 
-    <ul>
-        <li><a href="#">创建房间</a></li>
-        <li><a href="#">加入房间</a></li>
-    </ul>
+        <ul>
+            <li><a href="#">创建房间</a></li>
+            <li><a href="game.html?user=lala">加入房间</a></li>
+        </ul>
+    </form>
 </body>
 </html>
