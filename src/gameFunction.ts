@@ -17,6 +17,11 @@ class DistributionRoles {
 
     alive: number;//生命，1代表活着，0代表死去
 
+    DistributionRoles() {
+        let n = Math.floor(Math.random() * 5) - 1;
+        return Role[n];
+    }
+
 }
 
 class WolfMan extends DistributionRoles {
@@ -243,5 +248,4 @@ class Day {
     }
 
 }
-
 

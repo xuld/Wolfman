@@ -11,105 +11,14 @@
     <meta charset="utf-8" />
    
     <link rel="stylesheet" type="text/css" href="gameStyle.css" />
+    <script type="text/javascript" src="lib/gameFunction.js"></script>
+    <script type="text/javascript" src="lib/room.js"></script>
     <script type="text/javascript">
-
-        function getValue() {
-            var url = document.location.search;
-            var arr = url.split("=");
-            return arr[1];
-        }
-
-        function join0() {
-            if (document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
-                var ui = document.getElementById("attend0");
-                ui.style.display = "none";
-                var site = document.getElementById("site0");
-                var content = document.createTextNode(getValue());
-                site.appendChild(content);
+        function display(){
+            stxt.value = intxt.value + stxt.value + '\n\r';
+            intxt.value = "";
             }
-            else {
-                alert("你已加入游戏！");
-            }
-        }
-        
-
-        function join1() {
-            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
-                var ui = document.getElementById("attend1");
-                ui.style.display = "none";
-                var site = document.getElementById("site1");
-                var content = document.createTextNode(getValue());
-                site.appendChild(content);
-            }
-            else {
-                alert("你已加入游戏！");
-            }
-        }
-
-        function join2() {
-            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
-                var ui = document.getElementById("attend2");
-                ui.style.display = "none";
-                var site = document.getElementById("site2");
-                var content = document.createTextNode(getValue());
-                site.appendChild(content);
-            }
-            else {
-                alert("你已加入游戏！");
-            }
-        }   
-
-        function join3() {
-            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site4").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
-                var ui = document.getElementById("attend3");
-                ui.style.display = "none";
-                var site = document.getElementById("site3");
-                var content = document.createTextNode(getValue());
-                site.appendChild(content);
-            }
-            else {
-                alert("你已加入游戏！");
-            }
-        }
-
-        function join4() {
-            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site5").innerText != getValue()) {
-                var ui = document.getElementById("attend4");
-                ui.style.display = "none";
-                var site = document.getElementById("site4");
-                var content = document.createTextNode(getValue());
-                site.appendChild(content);
-            }
-            else {
-                alert("你已加入游戏！");
-            }
-        }
-
-        function join5() {
-            if (document.getElementById("site0").innerText != getValue() && document.getElementById("site1").innerText != getValue() && document.getElementById("site2").innerText != getValue() && document.getElementById("site3").innerText != getValue() && document.getElementById("site4").innerText != getValue()) {
-                var ui = document.getElementById("attend5");
-                ui.style.display = "none";
-                var site = document.getElementById("site5");
-                var content = document.createTextNode(getValue());
-                site.appendChild(content);
-            }
-            else {
-                alert("你已加入游戏！");
-            }
-        }
-
-        function gameStart() {
-            if (document.getElementById("site0").innerText != "" && document.getElementById("site1").innerText != "" && document.getElementById("site2").innerText != "" && document.getElementById("site3").innerText != "" && document.getElementById("site4").innerText != "" && document.getElementById("site5").innerText != "") {
-
-            }
-            else {
-                alert("等待其他玩家")
-            }
-        }
-        
-
-    </script>
-   
+    </script>   
 </head>
 
 <body>
@@ -120,6 +29,9 @@
             <td colspan="3" id="main">
                 <div id="site0">
                     <input id="attend0" type="button" value="参加" onclick="join0()"/>
+                    <div id="identity0">
+
+                    </div>
                 </div>
                 <div id="site1">
                     <input id="attend1" type="button" value="参加" onclick="join1()"/>
@@ -145,9 +57,9 @@
             <td></td>
            
             <td id="SpeakText">
-                           <input id="stxt" type="text" readonly /><br />
+                           <textarea id="stxt"></textarea><br />
                            <input id="intxt" type="text" />
-                           <input id="submit" type="button" value="提交" />
+                           <input id="submit" type="button" value="提交" onclick="display()"/>
                
             </td>
            
